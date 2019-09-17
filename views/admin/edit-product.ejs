@@ -9,23 +9,23 @@
             <input type="hidden" name="id" value="<%= product.id%>">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Product" id="product" type="text"  name ="title" class="validate" value="<%= product.title%>">
+                    <input placeholder="Product" id="product" type="text"  name ="title" class="validate" value="<%= product.title%>" required>
                     <label for="product">Product</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="image" type="text" name="image" class="validate" value="<%= product.imageUrl%>">
+                    <input id="image" type="text" name="image" class="validate" value="<%= product.imageUrl%>" required>
                     <label for="image">Image Url</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="description" type="text" name="description" value="<%= product.description%>" class="validate">
+                    <input id="description" type="text" name="description" value="<%= product.description%>" class="validate" required>
                     <label for="description">Description</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="price" type="number" name="price" value="<%= product.price%>" class="validate">
+                    <input id="price" type="number" name="price" step="0.01" value="<%= product.price%>" class="validate" required>
                     <label for="price">Price</label>
                 </div>
             </div>

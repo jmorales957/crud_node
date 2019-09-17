@@ -18,11 +18,11 @@
                             <span class="card-title"><%= product.productData.title%></span>
                         </div>
                         <div class="card-content">
-                            <p><%= product.productData.description%></p>
-                            <p href="#">$ <%= product.productData.price%></p>
+                            <p>Description: <%= product.productData.description%></p>
+                            <p href="#">Price: $ <%= product.productData.price%></p>
                         </div>
                         <div class="card-action">
-                            <p><%= product.qty%></p>
+                            <p>Quantity: <%= product.qty%></p>
                             <form action="/delete-to-cart" method="post">
                                 <input type="hidden" name="id" value="<%= product.productData.id%>">
                                 <button class="waves-effect waves-light red btn">Delete to Cart</button>
