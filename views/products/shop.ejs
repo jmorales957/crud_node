@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<%- include('../includes/head.ejs') %>
+<body>
+<%- include('../includes/header.ejs') %>
+
+<div class="content">
+    <div class="row">
+        <h1 class="center-align">Products</h1>
+    </div>
+    <% if(prods.length > 0) { %>
+        <div class="row">
+            <% for (let product of prods) { %>
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<%= product.imageUrl%>">
+                            <span class="card-title"><%= product.title%></span>
+                        </div>
+                        <div class="card-content">
+                            <p>I<%= product.description%></p>
+                            <p href="#">$ <%= product.price%></p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/products/<%= product.id%>" class="waves-effect waves-light blue btn"><i class="material-icons">remove_red_eye</i></a>
+                            <form action="/cart" method="post">
+                                <input type="hidden" name="id" value="<%= product.id%>">
+                                <button class="waves-effect waves-light green btn">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% }else { %>
+        <h1 class="center-align">No products</h1>
+    <% } %>
+
+</div>
+</body>
+</html>
